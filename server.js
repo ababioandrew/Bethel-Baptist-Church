@@ -34,7 +34,7 @@ const CONFIG = {
   ENQUIRY_EMAIL: "info@bethelbaptist.org",
 
   // --- SMS (FastHostTech) ---
-  SMS_TOKEN: "ad7f314d2725f7709692a8a5ce312913665f5de0e070c6cb2ba7ecc5906dc69d",
+  SMS_TOKEN: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   SMS_SENDER: "BETHEL",
   SMS_ENDPOINT: "https://api.fasthosttech.com/fastapi/v1/send-sms/",
 

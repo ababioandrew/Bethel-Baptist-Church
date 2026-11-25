@@ -3,10 +3,11 @@ import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 import { FaBullhorn, FaTrash } from "react-icons/fa";
 import "./AnnouncementBoard.css";
-
-const BIN_ID = process.env.REACT_APP_JSONBIN_BIN_ID;
-const MASTER_KEY = process.env.REACT_APP_JSONBIN_MASTER_KEY;
-const ADMIN_DELETE_PASSWORD = process.env.REACT_APP_ADMIN_DELETE_PASSWORD;
+import { 
+  JSONBIN_BIN_ID as BIN_ID, 
+  JSONBIN_MASTER_KEY as MASTER_KEY, 
+  ADMIN_DELETE_PASSWORD 
+} from "../data/validation";
 
 const API = {
   base: `https://api.jsonbin.io/v3/b/${BIN_ID}`,

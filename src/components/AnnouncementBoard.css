@@ -1,108 +1,187 @@
-.announcement-section {
-  padding: var(--space-6) var(--space-4);
+/* src/components/AnnouncementBoard.css */
+
+.announcement-board {
+  padding: 40px 16px;
   max-width: 900px;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
-.announcement-title {
-  background: var(--brand-bg-alt);
-  color: var(--brand-text);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-md);
-  border: 2px solid var(--brand-accent);
-  font-family: var(--font-display);
-  font-size: var(--fs-lg);
-  font-weight: 800;
+.announcement-loading {
   text-align: center;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-5);
+  color: #64748B;
+  font-style: italic;
+}
+
+.announcement-board-title {
+  background: #F8FAFC;
+  color: #0F172A;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  text-align: center;
+  border: 2px solid #C49A3A;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  box-shadow: var(--shadow-sm);
+  gap: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
-.announcement-title svg { color: var(--brand-accent); }
 
-.announcement-loading,
+.icon-gold {
+  color: #C49A3A;
+}
+
 .announcement-empty {
   text-align: center;
-  color: var(--brand-muted);
+  color: #64748B;
+  font-style: italic;
 }
 
-.announcement-list { display: grid; gap: var(--space-4); }
+.announcement-list {
+  display: grid;
+  gap: 16px;
+}
 
 .announcement-card {
   position: relative;
-  background: var(--brand-white);
-  border: 2px solid var(--brand-accent);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--dur-med) var(--ease-out),
-              box-shadow var(--dur-med) var(--ease-out);
+  background: #FFFFFF;
+  border: 2px solid #C49A3A;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .announcement-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.announcement-card__header {
+.announcement-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-2);
-  flex-wrap: wrap;
-}
-.announcement-card__title {
-  margin: 0;
-  font-family: var(--font-display);
-  color: var(--brand-text);
-  font-size: var(--fs-lg);
-  flex: 1;
-  min-width: 0;
-}
-.announcement-card__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-.announcement-card__date {
-  font-size: var(--fs-xs);
-  color: var(--brand-muted);
-  white-space: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
 }
 
-.announcement-delete {
+.announcement-card-title {
+  margin: 0;
+  color: #0F172A;
+  font-size: 1.15rem;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.announcement-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.announcement-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  white-space: nowrap;
+  background: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.announcement-delete-btn {
   background: #FEE2E2;
-  color: var(--brand-danger);
+  color: #B91C1C;
   border: 1px solid #FCA5A5;
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
   padding: 6px 12px;
   font-weight: 700;
-  font-size: var(--fs-xs);
+  font-size: 12px;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: transform var(--dur-fast), background var(--dur-fast);
+  transition: all 0.2s ease;
 }
-.announcement-delete:hover:not(:disabled) {
+
+.announcement-delete-btn:hover:not(:disabled) {
   background: #FECACA;
   transform: translateY(-1px);
 }
-.announcement-delete:disabled {
-  cursor: not-allowed;
+
+.announcement-delete-btn:disabled {
   opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.announcement-card__message {
-  color: var(--brand-text);
-  margin: var(--space-2) 0 0;
-  line-height: 1.55;
+.announcement-text {
+  color: #334155;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-@media (max-width: 560px) {
-  .announcement-card__header { align-items: flex-start; }
-  .announcement-card__actions { width: 100%; justify-content: space-between; }
+/* =========================================
+   DARK MODE OVERRIDES
+   (Uses the .theme-dark class from Home.jsx)
+   ========================================= */
+
+.theme-dark .announcement-board-title {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #C49A3A;
+}
+
+.theme-dark .announcement-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .announcement-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: #C49A3A;
+}
+
+.theme-dark .announcement-card-title {
+  color: #f8fafc;
+}
+
+.theme-dark .announcement-date {
+  background: #0f172a;
+  color: #94a3b8;
+}
+
+.theme-dark .announcement-text {
+  color: #cbd5e1;
+}
+
+.theme-dark .announcement-delete-btn {
+  background: rgba(185, 28, 28, 0.2);
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.3);
+}
+
+.theme-dark .announcement-delete-btn:hover:not(:disabled) {
+  background: rgba(185, 28, 28, 0.4);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .announcement-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .announcement-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

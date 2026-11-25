@@ -1,8 +1,3 @@
-/* ============================================================
-   BETHEL BAPTIST — HOME PAGE STYLES
-   All values are token-driven. No hardcoded brand colors.
-   ============================================================ */
-
 .home { background: var(--brand-bg); }
 
 /* ---------- HERO ---------- */

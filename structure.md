@@ -1,0 +1,30 @@
+src/
+  styles/
+    tokens.css
+    base.css
+    animations.css
+    rtl.css
+  locales/
+    en.json
+    ar.json
+  config/
+    site.js          // brand name, contact, taglines
+    api.js
+  icons/
+    BethelBaptistLogo.png
+  components/
+    PageHeader.jsx
+    Footer.jsx
+    AnnouncementBoard.jsx
+    BirthdayCelebrants.jsx
+    Chatbot.jsx
+    PageTransition.jsx
+  pages/
+    Home.jsx
+    About.jsx
+    Contact.jsx
+    Services.jsx
+    FullDetails.jsx
+    MembersDashboard.jsx
+    ShareMeetingInvites.jsx
+    Capabilities.jsx

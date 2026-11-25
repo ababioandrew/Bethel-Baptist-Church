@@ -1,0 +1,107 @@
+.footer {
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  margin-top: var(--space-8);
+}
+
+.footer__quote {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer__quote-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-7) var(--space-4);
+  text-align: center;
+}
+.footer__quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-md), 2vw, var(--fs-lg));
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 780px;
+  margin: 0 auto var(--space-3);
+}
+.footer__quote-attr {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.footer__nav-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-7) var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--brand-white);
+}
+.footer__logo-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 6px;
+}
+.footer__logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+.footer__logo-text { display: flex; flex-direction: column; }
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+.footer__sub {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  color: var(--brand-accent);
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  position: relative;
+}
+.footer__link::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: var(--brand-accent);
+  transition: width var(--dur-med) var(--ease-out);
+}
+.footer__link:hover { color: var(--brand-accent); }
+.footer__link:hover::after { width: 100%; }
+
+.footer__copy {
+  grid-column: 1 / -1;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: var(--space-4) 0 0;
+}
+
+@media (max-width: 768px) {
+  .footer__nav-inner { grid-template-columns: 1fr; text-align: center; }
+  .footer__links { justify-content: center; flex-wrap: wrap; }
+  .footer__logo { justify-content: center; }
+}

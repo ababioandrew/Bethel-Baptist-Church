@@ -1,0 +1,164 @@
+.contact-page { background: var(--brand-bg); }
+
+.contact-band {
+  background: var(--brand-primary);
+  color: var(--brand-white);
+}
+.contact-band-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  font-size: var(--fs-sm);
+}
+.contact-band-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.band-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 24px; height: 24px;
+  background: var(--brand-accent);
+  color: var(--brand-text);
+  border-radius: 50%;
+}
+
+.contact-main { padding: var(--space-8) var(--space-4); }
+.contact-main-inner { max-width: var(--max-width); margin-inline: auto; }
+.contact-heading { max-width: 720px; margin: 0 auto var(--space-7); text-align: center; }
+.contact-intro { color: var(--brand-muted); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+/* Info column */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.contact-info-item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.ci-icon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  background: rgba(196, 154, 58, 0.14);
+  color: var(--brand-primary);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.ci-label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin: 0 0 var(--space-1);
+}
+.ci-value { margin: 0; color: var(--brand-text); }
+.service-time-extra { margin-top: var(--space-3) !important; }
+
+.contact-service-times {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--brand-bg-alt);
+  border: 2px solid var(--brand-border);
+  border-radius: var(--radius-lg);
+}
+.service-times-icon {
+  font-size: 1.75rem;
+  color: var(--brand-accent);
+}
+
+.map-container {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--brand-border);
+  background: var(--brand-white);
+}
+.map-btn { margin: var(--space-3); }
+
+/* Form */
+.contact-form-col {
+  background: var(--brand-bg-alt);
+  border: 2px solid var(--brand-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+.form-form-heading { margin-bottom: var(--space-5); }
+.form-form-heading h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  margin: var(--space-2) 0;
+}
+.form-form-heading p { color: var(--brand-muted); margin: 0; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.form-field label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--brand-text);
+}
+.form-field input,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  padding: 12px 14px;
+  border: 2px solid var(--brand-border);
+  border-radius: var(--radius-md);
+  background: var(--brand-white);
+  color: var(--brand-text);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 4px rgba(196, 154, 58, 0.18);
+}
+.form-field textarea { min-height: 140px; resize: vertical; }
+
+.form-submit { width: 100%; }
+
+/* Success */
+.form-success {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+}
+.form-success-icon {
+  width: 64px; height: 64px;
+  margin: 0 auto var(--space-4);
+  display: grid; place-items: center;
+  background: rgba(4, 115, 45, 0.12);
+  color: var(--brand-success);
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.form-success h3 { font-family: var(--font-display); margin-bottom: var(--space-3); }
+.form-success p { color: var(--brand-muted); }
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}

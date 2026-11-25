@@ -1,0 +1,144 @@
+/* ============================================================
+   BETHEL BAPTIST — ANIMATIONS
+   Scroll-triggered + micro-interactions. GPU-friendly.
+   ============================================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translate3d(-32px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translate3d(32px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 154, 58, 0.45); }
+  50%      { box-shadow: 0 0 0 12px rgba(196, 154, 58, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40%           { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ---------- Base state (hidden until .visible) ---------- */
+.anim-fade-up,
+.anim-slide-left,
+.anim-slide-right,
+.anim-scale-in {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.anim-fade-up.visible,
+.anim-slide-left.visible,
+.anim-slide-right.visible,
+.anim-scale-in.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Starting offsets */
+.anim-fade-up    { transform: translate3d(0, 24px, 0); }
+.anim-slide-left { transform: translate3d(-32px, 0, 0); }
+.anim-slide-right{ transform: translate3d(32px, 0, 0); }
+.anim-scale-in   { transform: scale(0.94); }
+
+/* Delay helpers */
+.delay-1 { transition-delay: 80ms; }
+.delay-2 { transition-delay: 160ms; }
+.delay-3 { transition-delay: 240ms; }
+.delay-4 { transition-delay: 320ms; }
+.delay-5 { transition-delay: 400ms; }
+.delay-6 { transition-delay: 480ms; }
+
+/* RTL: mirror slide directions */
+[dir="rtl"] .anim-slide-left  { transform: translate3d(32px, 0, 0); }
+[dir="rtl"] .anim-slide-right { transform: translate3d(-32px, 0, 0); }
+
+/* ---------- Utility animations ---------- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top-color: var(--brand-white);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+  display: inline-block;
+}
+
+.pulse-gold { animation: pulseGold 2s infinite; }
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px; height: 8px;
+  margin-inline-end: 4px;
+  background: var(--brand-accent);
+  border-radius: 50%;
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+.typing-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.3s; }
+
+/* Marquee container */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--brand-primary);
+  color: var(--brand-white);
+}
+.marquee__track {
+  display: inline-block;
+  padding-block: var(--space-2);
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg,
+    #eef2f7 0%, #f8fafc 40%, #eef2f7 80%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-slide-left,
+  .anim-slide-right,
+  .anim-scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .marquee__track { animation: none; }
+}

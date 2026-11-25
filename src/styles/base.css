@@ -1,0 +1,157 @@
+/* ============================================================
+   BETHEL BAPTIST — BASE / RESET
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--brand-text);
+  background: var(--brand-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-text);
+}
+
+p { margin: 0 0 var(--space-4); }
+
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--brand-accent); }
+
+img { max-width: 100%; display: block; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 3px solid var(--brand-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip-to-content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  inset-inline-start: var(--space-4);
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  z-index: var(--z-toast);
+  transition: top var(--dur-fast);
+}
+.skip-link:focus { top: var(--space-4); }
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* Shared eyebrow + rule */
+.section-eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin: 0 0 var(--space-3);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
+  font-weight: 700;
+  color: var(--brand-text);
+  margin: 0 0 var(--space-4);
+}
+
+.gold-rule {
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--brand-accent);
+  margin: var(--space-4) 0;
+  border-radius: var(--radius-pill);
+}
+.gold-rule.centered { margin-inline: auto; }
+
+/* Buttons */
+.btn-gold,
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 28px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+  will-change: transform;
+}
+
+.btn-gold {
+  background: var(--brand-accent);
+  color: var(--brand-text);
+  border: 2px solid var(--brand-accent);
+}
+.btn-gold:hover {
+  background: #d8ab45;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-gold:active { transform: translateY(0); }
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--brand-accent);
+  border: 2px solid var(--brand-accent);
+}
+.btn-outline-gold:hover {
+  background: var(--brand-accent);
+  color: var(--brand-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Reduced-motion global */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

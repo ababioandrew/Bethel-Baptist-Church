@@ -1,0 +1,45 @@
+/* ============================================================
+   BETHEL BAPTIST — RTL OVERRIDES
+   Prefer logical properties in new CSS. These fix legacy physical
+   properties already in the codebase.
+   ============================================================ */
+
+[dir="rtl"] body {
+  font-family: var(--font-ar);
+  text-align: right;
+}
+
+/* Mirror directional icons */
+[dir="rtl"] .icon-arrow,
+[dir="rtl"] .chevron {
+  transform: scaleX(-1);
+}
+
+/* Footer nav alignment */
+[dir="rtl"] .footer-links { text-align: right; }
+[dir="rtl"] .footer-logo { flex-direction: row-reverse; }
+
+/* Form fields keep RTL flow */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+/* Chat bubble alignment */
+[dir="rtl"] .message-row.user { flex-direction: row-reverse; }
+[dir="rtl"] .message-row.bot  { flex-direction: row-reverse; }
+
+/* Flip physical margins used in legacy CSS */
+[dir="rtl"] .about-text        { margin-right: 0; margin-left: var(--space-6); }
+[dir="rtl"] .about-image-col   { margin-left: 0; }
+
+/* Gold rule alignment */
+[dir="rtl"] .gold-rule { margin-left: auto; margin-right: 0; }
+[dir="rtl"] .gold-rule.centered { margin-left: auto; margin-right: auto; }
+
+/* Announcement delete button */
+[dir="rtl"] .announcement-delete {
+  margin-left: 0;
+  margin-right: auto;
+}

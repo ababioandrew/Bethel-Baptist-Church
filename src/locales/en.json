@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "ministries": "Ministries",
+    "contact": "Contact"
+  },
+  "footer": { "rights": "All rights reserved." },
+  "about": {
+    "header": {
+      "label": "About Us",
+      "title": "{{name}} — Where Destinies Are Restored and Rearranged",
+      "subtitle": "We are a community of believers committed to knowing Christ, growing together, serving others, and sharing the hope of the Gospel."
+    },
+    "who": {
+      "eyebrow": "Who We Are",
+      "titleLine1": "A Family In Christ",
+      "titleLine2": "Growing Together",
+      "p1": "Bethel Baptist is a Christ-centered church community committed to helping people discover the love of God and grow in their relationship with Jesus Christ.",
+      "p2": "Our church is a place where people from different backgrounds can come together to worship, pray, learn from God's Word, build meaningful relationships, and serve others.",
+      "p3": "Whether you are new to faith, returning to church, or looking for a church family where you can grow, we welcome you.",
+      "imageAlt": "Church community gathered together"
+    },
+    "ministries": {
+      "worship": { "title": "Worship", "desc": "We gather together to worship God through praise, prayer, fellowship, and the teaching of His Word." },
+      "prayer": { "title": "Prayer", "desc": "We believe in the power of prayer and encourage one another to seek God in every season of life." },
+      "discipleship": { "title": "Discipleship", "desc": "We help believers grow deeper in their relationship with Christ and develop a life rooted in faith." }
+    },
+    "values": {
+      "eyebrow": "What We Believe",
+      "title": "Our Core Values",
+      "faith": { "title": "Faith", "desc": "We trust God, believe His Word, and seek to follow His purpose for our lives." },
+      "love": { "title": "Love", "desc": "We strive to love God and love people with compassion, grace, kindness, and humility." },
+      "service": { "title": "Service", "desc": "We use our gifts and resources to serve God, His church, and our community." },
+      "unity": { "title": "Unity", "desc": "We believe the church is one family, growing together and supporting one another in Christ." }
+    },
+    "vision": {
+      "eyebrow": "Our Vision",
+      "line1": "Knowing Christ.",
+      "line2": "Growing Together.",
+      "line3": "Serving Others.",
+      "desc": "At Bethel Baptist, we desire to see lives transformed by the Gospel, families strengthened through faith, and our community impacted by the love of Christ."
+    },
+    "cta": {
+      "eyebrow": "You Are Welcome",
+      "title": "Come Worship With {{name}}",
+      "desc": "We would love to welcome you and your family. Come as you are, meet our church family, and grow together in faith.",
+      "primary": "Plan Your Visit",
+      "secondary": "Explore Ministries"
+    },
+    "exploreMinistries": "Explore Our Ministries"
+  },
+  "contact": {
+    "header": {
+      "label": "Get In Touch",
+      "title": "We Would Love To Hear From You",
+      "subtitle": "Have a question, need prayer, or planning to visit? Get in touch with us. We would be happy to connect with you."
+    },
+    "heading": {
+      "eyebrow": "Connect With Us",
+      "title": "We Are Here For You",
+      "intro": "Whether you are looking for a church family, need someone to pray with you, or simply have a question, please reach out."
+    },
+    "info": {
+      "location": "Church Location",
+      "phone": "Phone",
+      "email": "Email",
+      "services": "Worship Services",
+      "mapTitle": "Church Location",
+      "directions": "Get Directions"
+    },
+    "form": {
+      "eyebrow": "Send Us A Message",
+      "title": "We'd Love To Connect With You",
+      "desc": "Fill out the form below and a member of our church team will get back to you.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "Your email address",
+      "phonePlaceholder": "Your phone number",
+      "messagePlaceholder": "How can we pray for you or help you?",
+      "submit": "Send Message"
+    },
+    "success": {
+      "title": "Message Received",
+      "desc": "Thank you for reaching out to us. We have received your message and someone will get in touch shortly.",
+      "again": "Send Another Message"
+    }
+  },
+  "announcements": {
+    "title": "Church Announcements",
+    "empty": "No announcements yet."
+  },
+  "birthdays": {
+    "loading": "Checking for birthday celebrants...",
+    "eyebrow": "🎉 CELEBRATION",
+    "title": "{{month}} Birthday Celebrants",
+    "subtitle": "Join us in celebrating our members born this month.",
+    "previewAll": "👁 Preview All",
+    "empty": "No birthdays found for {{month}}.",
+    "upcoming": "⏳ Upcoming Birthdays for {{month}}",
+    "celebrated": "✅ Celebrated This Month {{month}}",
+    "today": "Today!",
+    "turning": "Turning {{age}}",
+    "celebratedBadge": "Celebrated",
+    "ageGroups": { "child": "Child", "youth": "Youth", "adult": "Adult" },
+    "close": "Close birthday preview",
+    "modalSubtitle": "Let's celebrate our wonderful members!",
+    "footer": "🎊 Happy Birthday to all our celebrants!"
+  },
+  "chatbot": {
+    "header": "💬 Bethel Baptist Assistant",
+    "subtitle": "Ask us about enquiries, contacts, initiatives, remarks, or book a meeting.",
+    "greeting": "👋 Hello! I can assist you with the following:",
+    "chooseOption": "✨ Choose an option below:",
+    "enquiries": {
+      "intro": "📩 Please enter your enquiry below.",
+      "email": "Email Us:",
+      "whatsapp": "WhatsApp Us:"
+    },
+    "contacts": { "line": "📱 Send a message to WhatsApp:" },
+    "initiatives": { "line": "💡 Share your ideas with us!" },
+    "remarks": { "line": "📝 You can type your remarks freely." },
+    "meeting": { "line": "📅 To meet the pastor, please provide your preferred date/time." },
+    "unknown": "❓ Option not recognized.",
+    "sent": "✅ Your message has been sent via WhatsApp and email.",
+    "placeholder": "Type your message...",
+    "send": "Send"
+  },
+  "details": {
+    "title": "Membership Details",
+    "dashboard": "Dashboard",
+    "fullName": "Full Name",
+    "gender": "Gender",
+    "selectGender": "Select Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "location": "Location",
+    "dob": "Date Of Birth",
+    "doe": "Date of Entry",
+    "contacts": "Contacts",
+    "remarks": "Remarks",
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  }
+}

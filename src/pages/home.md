@@ -1979,7 +1979,7 @@ const [liveAnnouncements, setLiveAnnouncements] = useState([]);
 useEffect(() => {
 const fetchLiveAnnouncements = async () => {
 try {
-const JSONBIN_BIN_ID = process.env.REACT_APP_JSONBIN_BIN_ID || "6af8d362ac6210605a88248b";
+const JSONBIN_BIN_ID = process.env.REACT_APP_JSONBIN_BIN_ID || "6b08afbb1b390e1b5599e1c6";
 const JSONBIN_MASTER_KEY = process.env.REACT_APP_JSONBIN_MASTER_KEY || "$2a$10$Q/2lVH/nwELkpa5V3Sf/dOkGCRhpSl46JcsO.dGv5Q1rg/F7P5VO6";
 
 const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`, {

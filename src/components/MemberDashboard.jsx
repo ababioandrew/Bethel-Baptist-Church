@@ -109,7 +109,6 @@ export default function MemberDashboard() {
       const data = await api.sendSms(date, password);
       setSendResult(data);
 
-      // 1. Check if the backend returned a global error (like Insufficient Credits)
       if (data.message && data.message.includes("Insufficient SMS credits")) {
         Swal.fire({
           icon: "error",

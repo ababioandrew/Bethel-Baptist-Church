@@ -8,38 +8,26 @@ import crypto from "crypto";
 import { fileURLToPath } from "url";
 import axios from "axios";
 
-// ============================================================
-// HARDCODED CONFIGURATION — NO .env REQUIRED
-// ============================================================
-
 const CONFIG = {
-  // --- Server ---
   PORT: 5000,
   NODE_ENV: "development",
 
-  // --- Branding (Bethel Baptist) ---
   CHURCH_NAME: "Bethel Baptist",
   CHURCH_FULL_NAME: "Bethel Baptist Church",
   CHURCH_TAG: "#BethelBaptist",
   CHURCH_EMAIL: "info@bethelbaptist.org",
   CHURCH_PHONE: "+233207464426",
 
-  // --- Admin auth ---
   ADMIN_PASSWORD: "bethel2025",
-
-  // --- Email (Gmail + App Password) ---
-  // To generate an App Password: https://myaccount.google.com/apppasswords
   EMAIL_USER: "bethelbaptistchurch@gmail.com",
   EMAIL_PASS: "your-16-char-app-password-here",
   ENQUIRY_EMAIL: "info@bethelbaptist.org",
 
-  // --- SMS (FastHostTech) ---
   SMS_TOKEN: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   SMS_SENDER: "BETHEL",
   SMS_ENDPOINT: "https://api.fasthosttech.com/fastapi/v1/send-sms/",
 
-  // --- Storage ---
-  DATA_DIR: "", // resolved below to <project>/data
+  DATA_DIR: ""
 };
 
 const __filename = fileURLToPath(import.meta.url);
@@ -47,10 +35,6 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = CONFIG.DATA_DIR || path.join(__dirname, "data");
 
 const app = express();
-
-// ============================================================
-// MIDDLEWARE
-// ============================================================
 app.use(
   cors({
     origin: true,
@@ -60,11 +44,7 @@ app.use(
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// ============================================================
-// EMAIL TRANSPORTER
-// ============================================================
 let transporter = null;
-
 try {
   if (CONFIG.EMAIL_USER && CONFIG.EMAIL_PASS) {
     transporter = nodemailer.createTransport({
@@ -83,10 +63,6 @@ try {
 }
 
 const ADMIN_PASSWORD = CONFIG.ADMIN_PASSWORD;
-
-// ============================================================
-// IN-MEMORY + DISK STORE
-// ============================================================
 const seedAnnouncements = [
   {
     id: crypto.randomUUID(),
@@ -581,9 +557,6 @@ app.use((error, _req, res, _next) => {
   });
 });
 
-// ============================================================
-// START
-// ============================================================
 app.listen(CONFIG.PORT, () => {
   console.log(`✅ ${CONFIG.CHURCH_FULL_NAME} backend on http://localhost:${CONFIG.PORT}`);
 });

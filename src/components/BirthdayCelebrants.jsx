@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./BirthdayCelebrants.css";
-
-const BIN_ID = process.env.REACT_APP_JSONBIN_BIN_ID || "6af8d362ac6210605a88248b";
-const MASTER_KEY = process.env.REACT_APP_JSONBIN_MASTER_KEY;
+import { 
+  JSONBIN_BIN_ID as BIN_ID, 
+  JSONBIN_MASTER_KEY as MASTER_KEY, 
+} from "../data/validation";
 
 const parseDateSafe = (dateStr) => {
   if (!dateStr) return null;

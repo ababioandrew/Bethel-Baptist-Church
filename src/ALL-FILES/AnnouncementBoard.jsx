@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { FaBullhorn, FaTrash } from "react-icons/fa";
 
 // --- Same JSONBin credentials used by MembersDashboard ---
-const JSONBIN_BIN_ID = "6af8d362ac6210605a88248b";
+const JSONBIN_BIN_ID = "6b08afbb1b390e1b5599e1c6";
 const JSONBIN_MASTER_KEY = "$2a$10$Q/2lVH/nwELkpa5V3Sf/dOkGCRhpSl46JcsO.dGv5Q1rg/F7P5VO6";
 const ADMIN_DELETE_PASSWORD = ".apn";
 

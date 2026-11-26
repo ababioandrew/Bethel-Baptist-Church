@@ -1,22 +1,19 @@
+// src/component/MembersDashboard.jsx
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Swal from "sweetalert2";
 import "./MembersDashboard.css";
-
-// --- DIRECT JSONBIN CONFIGURATION ---
-const JSONBIN_BIN_ID = "6af8d362ac6210605a88248b";
-const JSONBIN_MASTER_KEY = "$2a$10$Q/2lVH/nwELkpa5V3Sf/dOkGCRhpSl46JcsO.dGv5Q1rg/F7P5VO6";
+import { 
+  JSONBIN_BIN_ID as BIN_ID, 
+  JSONBIN_MASTER_KEY as MASTER_KEY, 
+  ADMIN_DELETE_PASSWORD as PASSWORD
+} from "../data/validation";
 
 const API = {
-  base: `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,
-  latest: `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`,
+  base: `https://api.jsonbin.io/v3/b/${BIN_ID}`,
+  latest: `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`,
 };
 
 const BACKEND_URL = "https://apn-nu.vercel.app"; 
-const ADMIN_DELETE_PASSWORD = ".apn";
-
-// --------------------------------------------------
-// ✅ RESTORED FALLBACK DATA 
-// --------------------------------------------------
 const APN_INITIAL_DATA = [
   { fullName: "Rich Almor", gender: "Male", location: "Spintex road", dateOfBirth: "2026-11-03", dateOfEntry: "2026-11-03", contacts: "0548099730", email: "honbrewandy@yahoo.com", remarks: "New member", id: "1793707281348", maritalStatus: "", role: "Member" },
   { fullName: "MAVIS KONADU AMPONG", gender: "Female", location: "TESHIE MENSAH SABAH", dateOfBirth: "1990-01-12", dateOfEntry: "2026-11-14", contacts: "0245937191", email: "", remarks: "", maritalStatus: "Married", role: "Member" },
@@ -27,7 +24,7 @@ async function fetchJSON(url, options = {}) {
   const response = await fetch(url, {
     ...options,
     headers: {
-      "X-Master-Key": JSONBIN_MASTER_KEY,
+      "X-Master-Key": MASTER_KEY,
       Accept: "application/json",
       "Content-Type": "application/json",
       ...(options.headers || {}),
@@ -200,7 +197,7 @@ export default function MembersDashboard() {
       customClass: { popup: 'fancy-alert-popup' }
     });
     if (!passwordPrompt.isConfirmed) return;
-    if (passwordPrompt.value !== ADMIN_DELETE_PASSWORD) return Swal.fire({ icon: "error", title: "Incorrect Password", confirmButtonColor: "#d33" });
+    if (passwordPrompt.value !== PASSWORD) return Swal.fire({ icon: "error", title: "Incorrect Password", confirmButtonColor: "#d33" });
 
     try {
       setSaving(true);
@@ -231,7 +228,7 @@ export default function MembersDashboard() {
       customClass: { popup: 'fancy-alert-popup' }
     });
     if (!passwordPrompt.isConfirmed) return;
-    if (passwordPrompt.value !== ADMIN_DELETE_PASSWORD) {
+    if (passwordPrompt.value !== PASSWORD) {
       return Swal.fire({ icon: "error", title: "Incorrect Password", confirmButtonColor: "#d33" });
     }
 
@@ -275,7 +272,7 @@ export default function MembersDashboard() {
     });
     if (!passwordPrompt.isConfirmed) return;
 
-    if (passwordPrompt.value !== ADMIN_DELETE_PASSWORD) {
+    if (passwordPrompt.value !== PASSWORD) {
       return Swal.fire({
         icon: "error",
         title: "Incorrect Password",
@@ -333,7 +330,7 @@ export default function MembersDashboard() {
     });
     if (!passwordPrompt.isConfirmed) return;
 
-    if (passwordPrompt.value !== ADMIN_DELETE_PASSWORD) {
+    if (passwordPrompt.value !== PASSWORD) {
       return Swal.fire({
         icon: "error",
         title: "Incorrect Password",
@@ -436,7 +433,7 @@ export default function MembersDashboard() {
           customClass: { popup: 'fancy-alert-popup' }
         });
         if (!passwordPrompt.isConfirmed) return;
-        if (passwordPrompt.value !== ADMIN_DELETE_PASSWORD) return Swal.fire({ icon: "error", title: "Incorrect Password", confirmButtonColor: "#d33" });
+        if (passwordPrompt.value !== PASSWORD) return Swal.fire({ icon: "error", title: "Incorrect Password", confirmButtonColor: "#d33" });
       }
 
       setSaving(true);

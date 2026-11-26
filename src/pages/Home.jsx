@@ -145,6 +145,7 @@ function MediaGallery({ items }) {
   
   const [audioSearch, setAudioSearch] = useState("");
   const [videoSearch, setVideoSearch] = useState("");
+  
   const [photoIndex, setPhotoIndex] = useState(0);
 
   const photos = useMemo(() => items.filter((i) => i.type === "image"), [items]);

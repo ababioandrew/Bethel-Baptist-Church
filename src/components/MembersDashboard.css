@@ -1089,3 +1089,252 @@
     text-align: center;
   }
 }
+
+/* =========================================
+   UPDATED DASHBOARD BUTTONS
+========================================= */
+
+.dashboard-section button {
+  transition: all 0.2s ease;
+}
+
+.dashboard-section button:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 3px;
+}
+
+/* Member action buttons */
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.table-actions button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-height: 35px;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.table-actions .edit-button {
+  background: #e8f1ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.table-actions .edit-button:hover {
+  background: #dbeafe;
+  transform: translateY(-2px);
+}
+
+.table-actions .delete-button {
+  background: #fff1f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.table-actions .delete-button:hover:not(:disabled) {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+.table-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Announcement delete button */
+
+.announcement-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 13px;
+  background: #fff1f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.announcement-delete-btn:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+}
+
+.announcement-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Attendance history delete */
+
+.history-action-buttons .delete-history-btn {
+  background: #fff1f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  padding: 8px 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.history-action-buttons .delete-history-btn:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+}
+
+/* Announcement cards */
+
+.announcement-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--secondary);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(20,45,78,0.04);
+}
+
+.announcement-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.announcement-card-header h3 {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.announcement-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.announcement-date {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Improved table appearance */
+
+.dashboard-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+  background: #eef5ff;
+}
+
+/* Better form buttons */
+
+.form-actions button {
+  min-width: 140px;
+  border-radius: 8px;
+}
+
+.form-actions button:active {
+  transform: scale(0.98);
+}
+
+/* Better SweetAlert appearance */
+
+.fancy-alert-popup {
+  border-radius: 16px !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+.fancy-alert-title {
+  color: #142d4e !important;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+  .table-actions {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 85px;
+  }
+
+  .table-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .announcement-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .announcement-meta {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .announcement-delete-btn {
+    padding: 8px 12px;
+  }
+
+  .history-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .history-action-buttons button {
+    width: 100%;
+  }
+
+  .dashboard-table {
+    min-width: 750px;
+  }
+
+  .attendance-table {
+    min-width: 600px !important;
+  }
+
+  .dashboard-section {
+    overflow: hidden;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

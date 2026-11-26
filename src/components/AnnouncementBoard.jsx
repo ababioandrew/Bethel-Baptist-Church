@@ -134,16 +134,21 @@ export default function AnnouncementBoard() {
                 <h3 className="announcement-card__title">{a.title}</h3>
                 <div className="announcement-card__actions">
                   <span className="announcement-card__date">{a.date}</span>
+
                   <button
                     type="button"
                     className="announcement-delete"
                     onClick={() => handleDelete(a)}
                     disabled={deleting}
-                    title="Admin delete"
+                    title="Delete announcement"
                     aria-label={`Delete announcement: ${a.title}`}
                   >
-                    <FaTrash aria-hidden="true" /> Delete
+                    <FaTrash aria-hidden="true" />
+                    <span>{deleting ? "Deleting..." : "Delete"}</span>
                   </button>
+
+
+
                 </div>
               </div>
               <p className="announcement-card__message">{a.message}</p>

@@ -185,3 +185,243 @@
     justify-content: space-between;
   }
 }
+
+
+/* =========================================
+   ANNOUNCEMENT BOARD - CORRECTED STYLES
+========================================= */
+
+.announcement-section {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 16px;
+}
+
+.announcement-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 25px;
+  background: #f8fafc;
+  color: #142d4e;
+  border: 2px solid #c49a3a;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.announcement-title svg {
+  color: #c49a3a;
+}
+
+.announcement-loading,
+.announcement-empty {
+  padding: 25px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* Announcement cards */
+
+.announcement-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.announcement-card {
+  width: 100%;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #c49a3a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.09);
+}
+
+/* Header */
+
+.announcement-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+
+.announcement-card__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: #142d4e;
+  font-size: 1.15rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.announcement-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.announcement-card__date {
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* FIXED DELETE BUTTON */
+
+.announcement-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 15px;
+  background: #fff1f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.announcement-delete svg {
+  font-size: 13px;
+}
+
+.announcement-delete:hover:not(:disabled) {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.2);
+}
+
+.announcement-delete:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.announcement-delete:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.announcement-delete:focus-visible {
+  outline: 3px solid rgba(220, 38, 38, 0.25);
+  outline-offset: 3px;
+}
+
+/* Message */
+
+.announcement-card__message {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+.theme-dark .announcement-section {
+  color: #f8fafc;
+}
+
+.theme-dark .announcement-title {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.theme-dark .announcement-card {
+  background: #1e293b;
+  border-color: #334155;
+  border-left-color: #c49a3a;
+}
+
+.theme-dark .announcement-card__title {
+  color: #f8fafc;
+}
+
+.theme-dark .announcement-card__message {
+  color: #cbd5e1;
+}
+
+.theme-dark .announcement-card__date {
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+.theme-dark .announcement-delete {
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.3);
+}
+
+.theme-dark .announcement-delete:hover:not(:disabled) {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .announcement-section {
+    padding: 20px 10px;
+  }
+
+  .announcement-title {
+    font-size: 1.1rem;
+  }
+
+  .announcement-card {
+    padding: 16px;
+  }
+
+  .announcement-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .announcement-card__actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .announcement-delete {
+    min-height: 40px;
+    padding: 9px 13px;
+  }
+
+  .announcement-card__message {
+    font-size: 13px;
+  }
+}

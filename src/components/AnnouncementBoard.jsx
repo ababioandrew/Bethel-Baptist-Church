@@ -3,11 +3,15 @@ import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 import { FaBullhorn, FaTrash } from "react-icons/fa";
 import "./AnnouncementBoard.css";
-import { 
-  JSONBIN_BIN_ID as BIN_ID, 
-  JSONBIN_MASTER_KEY as MASTER_KEY, 
-  ADMIN_DELETE_PASSWORD 
-} from "../data/validation";
+// import { 
+//   JSONBIN_BIN_ID as BIN_ID, 
+//   JSONBIN_MASTER_KEY as MASTER_KEY, 
+//   ADMIN_DELETE_PASSWORD 
+// } from "../data/validation";
+
+const BIN_ID = "6b0615acac6210605aa1f169";
+const MASTER_KEY = "$2a$10$vHVlIdrYpHuwF/VxfmetyufB6JoAqbipsW/Wi5vn6284P/lTnYQHO";
+const ADMIN_DELETE_PASSWORD = ".bbc";
 
 const API = {
   base: `https://api.jsonbin.io/v3/b/${BIN_ID}`,

@@ -692,22 +692,43 @@ export default function Home() {
       <AnnouncementBoard />
       <BirthdayCelebrants />
 
-      {showFab && (
-        <div className="home-fab">
-          <Link to="/chatbot" className="home-fab__btn" aria-label="Chat with us">
-            <FaComments />
-          </Link>
-          <a
-            href={`https://wa.me/${SITE.whatsapp}`}
-            className="home-fab__btn home-fab__btn--wa"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp />
-          </a>
-        </div>
-      )}
+     {showFab && (
+  <div className="home-fab">
+
+    {/* Start Meeting */}
+    <Link
+      to="/meeting"
+      className="home-fab__btn home-fab__btn--meeting"
+      aria-label="Start or Join Meeting"
+      title="Start or Join Meeting"
+    >
+      <FaVideo />
+    </Link>
+
+    {/* Chat */}
+    <Link
+      to="/chatbot"
+      className="home-fab__btn"
+      aria-label="Chat with us"
+      title="Chat with us"
+    >
+      <FaComments />
+    </Link>
+
+    {/* WhatsApp */}
+    <a
+      href={`https://wa.me/${SITE.whatsapp}`}
+      className="home-fab__btn home-fab__btn--wa"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+      title="WhatsApp"
+    >
+      <FaWhatsapp />
+    </a>
+
+  </div>
+)}
 
       {showPrayerModal && (
         <div className="prayer-modal-overlay" onClick={() => setShowPrayerModal(false)}>

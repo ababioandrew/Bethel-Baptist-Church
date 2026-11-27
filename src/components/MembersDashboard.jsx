@@ -8,9 +8,9 @@ import "./MembersDashboard.css";
   // ADMIN_DELETE_PASSWORD as PASSWORD
 // } from "../data/validation";
 
-export const JSONBIN_BIN_ID= "6b08afbb1b390e1b5599e1c6"
-export const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
-export const PASSWORD= ".bbc"
+const JSONBIN_BIN_ID= "6b08afbb1b390e1b5599e1c6"
+const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
+const PASSWORD= ".bbc"
 
 const API = {
   base: `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,

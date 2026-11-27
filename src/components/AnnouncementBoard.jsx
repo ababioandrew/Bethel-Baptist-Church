@@ -10,7 +10,7 @@ import "./AnnouncementBoard.css";
 // } from "../data/validation";
 
 const BIN_ID = "6b08afbb1b390e1b5599e1c6";
-const MASTER_KEY = "$2a$10$vHVlIdrYpHuwF/VxfmetyufB6JoAqbipsW/Wi5vn6284P/lTnYQHO";
+const MASTER_KEY = "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf.";
 const ADMIN_DELETE_PASSWORD = ".bbc";
 
 const API = {

@@ -30,7 +30,6 @@ export default function MemberDashboard() {
   const [sending, setSending] = useState(false);
   const [sendResult, setSendResult] = useState(null);
 
-  // Load members + attendance for the selected date
   useEffect(() => {
     let cancelled = false;
     (async () => {

@@ -4,9 +4,9 @@ import Swal from "sweetalert2";
 import { FaBullhorn, FaTrash } from "react-icons/fa";
 import "./AnnouncementBoard.css";
 // import { 
-//   JSONBIN_BIN_ID as BIN_ID, 
-//   JSONBIN_MASTER_KEY as MASTER_KEY, 
-//   ADMIN_DELETE_PASSWORD 
+//  JSONBIN_BIN_ID as BIN_ID, 
+//  JSONBIN_MASTER_KEY as MASTER_KEY, 
+//  ADMIN_DELETE_PASSWORD 
 // } from "../data/validation";
 
 const BIN_ID = "6b0615acac6210605aa1f169";

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./BirthdayCelebrants.css";
-// import { 
-//   JSONBIN_BIN_ID as BIN_ID, 
-//   JSONBIN_MASTER_KEY as MASTER_KEY, 
-// } from "../data/validation";
+import { 
+  JSONBIN_BIN_ID as BIN_ID, 
+  JSONBIN_MASTER_KEY as MASTER_KEY, 
+} from "../data/validation";
 
-const BIN_ID= "6b08afbb1b390e1b5599e1c6"
-const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
+// const BIN_ID= "6b08afbb1b390e1b5599e1c6"
+// const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
 
 const parseDateSafe = (dateStr) => {
   if (!dateStr) return null;

@@ -2,10 +2,15 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Swal from "sweetalert2";
 import "./MembersDashboard.css";
+import { 
+  JSONBIN_BIN_ID,
+  JSONBIN_MASTER_KEY as MASTER_KEY,
+  ADMIN_DELETE_PASSWORD as PASSWORD
+} from "../data/validation";
 
-const JSONBIN_BIN_ID= "6b08afbb1b390e1b5599e1c6"
-const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
-const PASSWORD= ".bbc"
+// const JSONBIN_BIN_ID= "6b08afbb1b390e1b5599e1c6"
+// const MASTER_KEY= "$2a$10$Z03JdddbSDwv/apmmJzMfuXEBIMpOHm5P8kMNNygS0ci3jJEC5Cf."
+// const PASSWORD= ".bbc"
 
 const API = {
   base: `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,
